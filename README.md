@@ -1,1 +1,1 @@
-# todo-or-not-todo explore the dilemma between todo and not-todo
+# todo-or-not-todo explores the dilemma between todo and not-todo
