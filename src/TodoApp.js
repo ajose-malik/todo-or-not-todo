@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
+// import TodoList from './';
+import TodoInput from './TodoInput';
 import TodoList from './TodoList';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Grid from '@material-ui/core/Grid';
+import { Typography, Paper, AppBar, Toolbar } from '@material-ui/core';
 
 function TodoApp() {
 	const firstTodos = [
@@ -12,6 +10,9 @@ function TodoApp() {
 		{ id: 2, task: 'get job', completed: true }
 	];
 	const [todos, setTodos] = useState(firstTodos);
+	const addTodo = newTodo => {
+		setTodos([...todos, { id: 3, task: newTodo, completed: false }]);
+	};
 	return (
 		<Paper
 			style={{
@@ -26,6 +27,7 @@ function TodoApp() {
 					<Typography color='inherit'>Todo List</Typography>
 				</Toolbar>
 			</AppBar>
+			<TodoInput addTodo={addTodo} />
 			<TodoList todos={todos} />
 		</Paper>
 	);
