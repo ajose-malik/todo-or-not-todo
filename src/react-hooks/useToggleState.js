@@ -6,6 +6,12 @@ export default toggleState => {
 	const toggle = () => {
 		toggled(!untoggle);
 	};
-
 	return [untoggle, toggle];
+
+	// return {
+	// 	untoggle,
+	// 	toggle: () => {
+	// 		toggled(!untoggle);
+	// 	}
+	// };
 };

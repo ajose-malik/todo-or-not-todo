@@ -7,18 +7,16 @@ function TodoList({ todos, deleteTodo, toggleTodo, updateTodo }) {
 		return (
 			<Paper>
 				<List>
-					{todos.map((todo, i) => (
+					{todos.map((todo, idx) => (
 						<>
 							<Todo
-								id={todo.id}
+								{...todo}
 								key={todo.id}
-								task={todo.task}
-								completed={todo.completed}
 								deleteTodo={deleteTodo}
 								toggleTodo={toggleTodo}
 								updateTodo={updateTodo}
 							/>
-							{i < todos.length - 1 && <Divider />}
+							{idx < todos.length - 1 && <Divider />}
 						</>
 					))}
 				</List>
