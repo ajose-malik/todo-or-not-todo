@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import useTodoState from './react-hooks/useTodoState';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
@@ -10,10 +10,6 @@ function TodoApp() {
 	const { todos, addTodo, deleteTodo, toggleTodo, updateTodo } = useTodoState(
 		currentTodos
 	);
-
-	useEffect(() => {
-		localStorage.setItem('todo-list', JSON.stringify(todos));
-	}, [todos]);
 
 	return (
 		<Paper className='TodoApp-paper' elevation={0}>
