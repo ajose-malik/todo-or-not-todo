@@ -4,23 +4,21 @@ import useInputState from './react-hooks/useInputState';
 import './UpdateTodo.css';
 
 function UpdateTodo({ updateTodo, id, task, toggleUpdate }) {
-	const [value, handleChange, reset] = useInputState(task);
+	const [value, handleChange] = useInputState(task);
 	return (
 		<form
 			onSubmit={e => {
 				e.preventDefault();
 				updateTodo(id, value);
-				reset();
 				toggleUpdate();
 			}}
+			onMouseOut={e => {
+				setTimeout(() => {
+					toggleUpdate();
+				}, 1000);
+			}}
 			className='UpdateTodo-margin'>
-			<TextField
-				margin='normal'
-				value={value}
-				onChange={handleChange}
-				fullWidth
-				autoFocus
-			/>
+			<TextField value={value} onChange={handleChange} fullWidth autoFocus />
 		</form>
 	);
 }

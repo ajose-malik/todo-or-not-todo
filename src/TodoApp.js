@@ -35,14 +35,7 @@ function TodoApp() {
 	};
 
 	return (
-		<Paper
-			style={{
-				padding: 0,
-				margin: 0,
-				height: '100vh',
-				backgroundColor: '#eee'
-			}}
-			elevation={0}>
+		<Paper className='TodoApp-paper' elevation={0}>
 			<AppBar color='primary' position='static' className='TodoApp-h-50px'>
 				<Toolbar>
 					<Typography color='inherit'>Todo List</Typography>
