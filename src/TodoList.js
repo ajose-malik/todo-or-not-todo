@@ -11,7 +11,7 @@ function TodoList({ todos, deleteTodo, toggleTodo, updateTodo }) {
 						<>
 							<Todo
 								{...todo}
-								key={todo.id}
+								key={idx}
 								deleteTodo={deleteTodo}
 								toggleTodo={toggleTodo}
 								updateTodo={updateTodo}
