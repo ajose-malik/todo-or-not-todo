@@ -8,7 +8,7 @@ import './TodoApp.css';
 function TodoApp() {
 	const currentTodos = [
 		{ id: 1, task: 'get shit done', completed: false },
-		{ id: 2, task: 'get job', completed: true }
+		{ id: 2, task: 'get job', completed: false }
 	];
 	const [todos, setTodos] = useState(currentTodos);
 	const addTodo = newTodo => {
@@ -23,6 +23,13 @@ function TodoApp() {
 	const toggleTodo = todoId => {
 		const updatedTodo = todos.map(todo =>
 			todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
+		);
+		setTodos(updatedTodo);
+	};
+
+	const updateTodo = (todoId, newTodo) => {
+		const updatedTodo = todos.map(todo =>
+			todo.id === todoId ? { ...todo, task: newTodo } : todo
 		);
 		setTodos(updatedTodo);
 	};
@@ -48,6 +55,7 @@ function TodoApp() {
 						todos={todos}
 						deleteTodo={deleteTodo}
 						toggleTodo={toggleTodo}
+						updateTodo={updateTodo}
 					/>
 				</Grid>
 			</Grid>
