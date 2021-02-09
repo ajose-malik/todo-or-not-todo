@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, memo } from 'react';
 import {
 	ListItem,
 	ListItemText,
@@ -10,13 +10,15 @@ import {
 // import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import useToggleState from './react-hooks/useToggleState';
-import { TodosContext } from './contexts/todosContext';
+import { DispatchContext } from './contexts/todosContext';
 import UpdateTodo from './UpdateTodo';
 import './Todo.css';
 
 function Todo({ task, completed, id }) {
-	const { dispatch } = useContext(TodosContext);
+	const dispatch = useContext(DispatchContext);
 	const [update, toggle] = useToggleState(false);
+	console.log('from todo - rerender', task);
+
 	return (
 		<ListItem className='Todo-height'>
 			{update ? (
@@ -46,4 +48,4 @@ function Todo({ task, completed, id }) {
 	);
 }
 
-export default Todo;
+export default memo(Todo);
