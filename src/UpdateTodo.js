@@ -5,13 +5,13 @@ import { TodosContext } from './contexts/todosContext';
 import './UpdateTodo.css';
 
 function UpdateTodo({ id, task, toggleUpdate }) {
-	const { updateTodo } = useContext(TodosContext);
+	const { dispatch } = useContext(TodosContext);
 	const [value, handleChange] = useInputState(task);
 	return (
 		<form
 			onSubmit={e => {
 				e.preventDefault();
-				updateTodo(id, value);
+				dispatch({ type: 'UPDATE', id: id, newTask: value });
 				toggleUpdate();
 			}}
 			onMouseOut={e => {

@@ -15,7 +15,7 @@ import UpdateTodo from './UpdateTodo';
 import './Todo.css';
 
 function Todo({ task, completed, id }) {
-	const { deleteTodo, toggleTodo } = useContext(TodosContext);
+	const { dispatch } = useContext(TodosContext);
 	const [update, toggle] = useToggleState(false);
 	return (
 		<ListItem className='Todo-height'>
@@ -23,19 +23,22 @@ function Todo({ task, completed, id }) {
 				<UpdateTodo id={id} task={task} toggleUpdate={toggle} />
 			) : (
 				<>
-					<Checkbox checked={completed} onClick={() => toggleTodo(id)} />
+					<Checkbox
+						tabIndex={-1}
+						checked={completed}
+						onClick={() => dispatch({ type: 'TOGGLE', id: id })}
+					/>
 					<ListItemText
 						onClick={toggle}
 						style={{ textDecoration: completed ? 'line-through' : 'none' }}>
 						{task}
 					</ListItemText>
 					<ListItemSecondaryAction>
-						<IconButton aria-label='Delete' onClick={() => deleteTodo(id)}>
+						<IconButton
+							aria-label='Delete'
+							onClick={() => dispatch({ type: 'DELETE', id: id })}>
 							<DeleteIcon />
 						</IconButton>
-						{/* <IconButton aria-label='Edit' onClick={toggle}>
-							<EditIcon />
-						</IconButton> */}
 					</ListItemSecondaryAction>
 				</>
 			)}

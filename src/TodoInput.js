@@ -6,13 +6,13 @@ import './TodoInput.css';
 
 function TodoInput() {
 	const [value, handleChange, resetValue] = useInputState('');
-	const { addTodo } = useContext(TodosContext);
+	const { dispatch } = useContext(TodosContext);
 	return (
 		<Paper className='TodoInput-my-1 TodoInput-px-1'>
 			<form
 				onSubmit={e => {
 					e.preventDefault();
-					addTodo(value);
+					dispatch({ type: 'ADD', task: value });
 					resetValue();
 				}}>
 				<TextField
