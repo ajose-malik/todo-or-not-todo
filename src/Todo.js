@@ -17,7 +17,7 @@ import './Todo.css';
 function Todo({ task, completed, id }) {
 	const dispatch = useContext(DispatchContext);
 	const [update, toggle] = useToggleState(false);
-	console.log('from todo - rerender', task);
+	// console.log('from todo - rerender', task);
 
 	return (
 		<ListItem className='Todo-height'>
