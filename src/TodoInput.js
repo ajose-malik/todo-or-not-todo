@@ -1,6 +1,7 @@
 import React from 'react';
 import { Paper, TextField } from '@material-ui/core';
 import useInputState from './react-hooks/useInputState';
+import { TodosContext } from './contexts/todosContext';
 import './TodoInput.css';
 
 function TodoInput({ addTodo }) {

@@ -7,7 +7,7 @@ import {
 	ListItemSecondaryAction
 } from '@material-ui/core';
 // import { Delete, Edit } from '@material-ui/icons';
-import EditIcon from '@material-ui/icons/Edit';
+// import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import useToggleState from './react-hooks/useToggleState';
 import UpdateTodo from './UpdateTodo';
@@ -36,9 +36,9 @@ function Todo({ task, completed, id, deleteTodo, toggleTodo, updateTodo }) {
 						<IconButton aria-label='Delete' onClick={() => deleteTodo(id)}>
 							<DeleteIcon />
 						</IconButton>
-						<IconButton aria-label='Edit' onClick={toggle}>
+						{/* <IconButton aria-label='Edit' onClick={toggle}>
 							<EditIcon />
-						</IconButton>
+						</IconButton> */}
 					</ListItemSecondaryAction>
 				</>
 			)}
