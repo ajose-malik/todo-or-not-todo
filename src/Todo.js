@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
 	ListItem,
 	ListItemText,
@@ -10,20 +10,17 @@ import {
 // import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import useToggleState from './react-hooks/useToggleState';
+import { TodosContext } from './contexts/todosContext';
 import UpdateTodo from './UpdateTodo';
 import './Todo.css';
 
-function Todo({ task, completed, id, deleteTodo, toggleTodo, updateTodo }) {
+function Todo({ task, completed, id }) {
+	const { deleteTodo, toggleTodo } = useContext(TodosContext);
 	const [update, toggle] = useToggleState(false);
 	return (
 		<ListItem className='Todo-height'>
 			{update ? (
-				<UpdateTodo
-					updateTodo={updateTodo}
-					id={id}
-					task={task}
-					toggleUpdate={toggle}
-				/>
+				<UpdateTodo id={id} task={task} toggleUpdate={toggle} />
 			) : (
 				<>
 					<Checkbox checked={completed} onClick={() => toggleTodo(id)} />
