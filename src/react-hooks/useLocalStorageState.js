@@ -1,23 +1,23 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-// const useLocalStorageState = (id, defaultValue) => {
-// 	const checkLocalStorage = () => {
-// 		let value;
-// 		try {
-// 			value = JSON.parse(localStorage.getItem(id) || String(defaultValue));
-// 		} catch (e) {
-// 			value = defaultValue;
-// 		}
-// 		return value;
-// 	};
+const useLocalStorageState = (id, defaultValue) => {
+	const checkLocalStorage = () => {
+		let value;
+		try {
+			value = JSON.parse(localStorage.getItem(id) || String(defaultValue));
+		} catch (e) {
+			value = defaultValue;
+		}
+		return value;
+	};
 
-// 	const [state, setState] = useState(checkLocalStorage);
+	const [state, setState] = useState(checkLocalStorage);
 
-// 	useEffect(() => {
-// 		localStorage.setItem(id, JSON.stringify(state));
-// 	}, [id, state]);
+	useEffect(() => {
+		localStorage.setItem(id, JSON.stringify(state));
+	}, [id, state]);
 
-// 	return [state, setState];
-// };
+	return [state, setState];
+};
 
-// export default useLocalStorageState;
+export default useLocalStorageState;
