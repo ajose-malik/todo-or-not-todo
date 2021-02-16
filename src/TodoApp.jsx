@@ -9,7 +9,7 @@ function TodoApp() {
 		<Paper className="TodoApp-paper" elevation={0}>
 			<AppBar color="primary" position="static" className="TodoApp-h-50px">
 				<Toolbar>
-					<Typography color="inherit">my SUPERUNDERWHELMING app</Typography>
+					<Typography color="inherit">my SUPERUNDERWHELMINGTODO app</Typography>
 				</Toolbar>
 			</AppBar>
 			<Grid className="TodoApp-mt-1" container justify="center">
