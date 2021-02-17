@@ -7,7 +7,7 @@ import useToggleState from "./react-hooks/useToggleState";
 import "./MotivationInput.css";
 
 function MotivationInput({ add, get, motivation }) {
-	setInterval(get, 30000);
+	setInterval(get, 20000);
 
 	const [value, handleChange, resetValue] = useInputState("");
 	const [toggleState, handleToggleState] = useToggleState(true);
