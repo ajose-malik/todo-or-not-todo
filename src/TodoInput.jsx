@@ -7,6 +7,7 @@ import "./TodoInput.css";
 
 function TodoInput({ add }) {
 	const [value, handleChange, resetValue] = useInputState("");
+
 	return (
 		<Paper className="TodoInput-my-1 TodoInput-px-1">
 			<form
