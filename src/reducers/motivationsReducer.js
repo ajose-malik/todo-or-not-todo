@@ -27,7 +27,8 @@ const addMotivation = newMotivation => {
 	});
 };
 
-const motivationsReducer = (state = getMotivation(), action) => {
+const motivationsReducer = (state, action) => {
+	state = getMotivation();
 	switch (action.type) {
 		case "ADD_MOTIVATION":
 			addMotivation({ motivation: action.newMotivation });

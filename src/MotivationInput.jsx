@@ -7,9 +7,7 @@ import useToggleState from "./react-hooks/useToggleState";
 import "./MotivationInput.css";
 
 function MotivationInput({ add, get, motivation }) {
-	setTimeout(() => {
-		get();
-	}, 10000);
+	setInterval(get, 30000);
 
 	const [value, handleChange, resetValue] = useInputState("");
 	const [toggleState, handleToggleState] = useToggleState(true);
@@ -28,9 +26,7 @@ function MotivationInput({ add, get, motivation }) {
 						resetValue();
 					}}
 					onMouseOut={e => {
-						setTimeout(() => {
-							handleToggleState();
-						}, 1000);
+						setTimeout(handleToggleState, 1000);
 					}}>
 					<TextField
 						value={value}
