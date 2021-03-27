@@ -1,1 +1,9 @@
-# todo-or-not-todo explores the dilemma between todo and not-todo
+# Todo List
+#### Built by: Malik Ajose
+
+---
+
+### Project Description:
+This is a classic todo-list app built with React+Redux.
+
+
