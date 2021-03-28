@@ -1,17 +1,3 @@
 .TodoApp-mt-1 {
 	margin-top: 1rem;
 }
-
-.TodoApp-h-50px {
-	height: 50px;
-}
-.TodoApp-center {
-	text-align: center;
-}
-
-.TodoApp-paper {
-	padding: 0;
-	margin: 0;
-	height: "100vh";
-	background-color: "#eee";
-}

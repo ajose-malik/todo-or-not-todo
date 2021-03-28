@@ -1,8 +1,6 @@
-import { combineReducers } from "redux";
-import todosReducer from "../reducers/todosReducer";
-import motivationsReducer from "../reducers/motivationsReducer";
+import { combineReducers } from "redux"
+import todosReducer from "../reducers/todosReducer"
 
 export default combineReducers({
-	todos: todosReducer,
-	motivation: motivationsReducer
-});
+	todos: todosReducer
+})

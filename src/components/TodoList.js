@@ -1,7 +1,7 @@
 // import React, { useContext } from "react";
-import { Paper, List, Divider } from "@material-ui/core";
-import Todo from "./Todo";
-import { connect } from "react-redux";
+import { Paper, List, Divider } from "@material-ui/core"
+import Todo from "./Todo"
+import { connect } from "react-redux"
 
 function TodoList({ todos }) {
 	if (todos.length) {
@@ -16,13 +16,13 @@ function TodoList({ todos }) {
 					))}
 				</List>
 			</Paper>
-		);
+		)
 	}
-	return null;
+	return null
 }
 
-const mapStateToProps = state => ({
-	todos: state.todos
-});
+const mapStateToProps = ({ todos }) => ({
+	todos
+})
 
-export default connect(mapStateToProps)(TodoList);
+export default connect(mapStateToProps)(TodoList)

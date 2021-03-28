@@ -1,17 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { useState } from "react";
+import { useState } from "react"
 
 export default changeToggleState => {
-	const [toggleState, setToggleState] = useState(changeToggleState);
-	const handleToggleState = () => {
-		setToggleState(!toggleState);
-	};
-	return [toggleState, handleToggleState];
+	const [toggleState, setToggleState] = useState(changeToggleState)
 
-	// return {
-	// 	untoggle,
-	// 	toggle: () => {
-	// 		toggled(!untoggle);
-	// 	}
-	// };
-};
+	const handleToggleState = () => {
+		setToggleState(!toggleState)
+	}
+
+	return [toggleState, handleToggleState]
+}

@@ -1,20 +1,20 @@
-import React, { memo } from "react";
-import { connect } from "react-redux";
+import React, { memo } from "react"
+import { connect } from "react-redux"
 import {
 	ListItem,
 	ListItemText,
 	Checkbox,
 	IconButton,
 	ListItemSecondaryAction
-} from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Delete";
-import { toggleTodo, deleteTodo, updateTodo } from "./reducers/actionCreator";
-import useToggleState from "./react-hooks/useToggleState";
-import UpdateTodo from "./UpdateTodo";
-import "./Todo.css";
+} from "@material-ui/core"
+import DeleteIcon from "@material-ui/icons/Delete"
+import { toggleTodo, deleteTodo, updateTodo } from "../reducers/actionCreator"
+import useToggleState from "../react-hooks/useToggleState"
+import UpdateTodo from "./UpdateTodo"
+import "./Todo.css"
 
 function Todo({ task, completed, id, toggleChecked, remove, update }) {
-	const [toggleState, handleToggleState] = useToggleState(false);
+	const [toggleState, handleToggleState] = useToggleState(false)
 
 	return (
 		<ListItem className="Todo-height">
@@ -45,13 +45,13 @@ function Todo({ task, completed, id, toggleChecked, remove, update }) {
 				</>
 			)}
 		</ListItem>
-	);
+	)
 }
 
 const mapDispatchToProps = dispatch => ({
 	toggleChecked: id => dispatch(toggleTodo(id)),
 	remove: id => dispatch(deleteTodo(id)),
 	update: (value, id) => dispatch(updateTodo(value, id))
-});
+})
 
-export default connect(null, mapDispatchToProps)(memo(Todo));
+export default connect(null, mapDispatchToProps)(memo(Todo))
